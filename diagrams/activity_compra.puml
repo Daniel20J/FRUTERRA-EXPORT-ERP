@@ -1,0 +1,19 @@
+@startuml
+start
+:Crear solicitud de compra;
+:Revisión por Encargado de Compras;
+if (Requiere cotización?) then (sí)
+  :Solicitar cotizaciones a proveedores;
+  :Evaluar cotizaciones;
+endif
+if (Aprobada?) then (sí)
+  :Generar orden de compra;
+  :Enviar a proveedor;
+  :Recepción de mercancía;
+  :Actualizar inventario;
+else (no)
+  stop
+endif
+:Cerrar proceso;
+stop
+@enduml

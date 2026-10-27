@@ -1,0 +1,20 @@
+@startuml
+start
+:Cliente solicita cotización o pedido;
+:Vendedor crea cotización;
+if (Cliente aprueba?) then (sí)
+  :Registrar pedido;
+  :Verificar inventario;
+  if (Inventario suficiente?) then (sí)
+    :Confirmar pedido;
+    :Preparar despacho;
+    :Despachar y facturar;
+  else (no)
+    :Notificar falta de stock;
+    :Proponer alternativas;
+  endif
+else (no)
+  stop
+endif
+stop
+@enduml

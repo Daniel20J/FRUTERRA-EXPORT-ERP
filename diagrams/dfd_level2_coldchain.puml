@@ -1,0 +1,12 @@
+@startuml
+!define RECTANGLE class
+RECTANGLE "Cadena de Frío" as Cold
+actor Sensor
+actor Supervisor
+
+Sensor --> Cold : Enviar lecturas de temperatura
+Cold --> Supervisor : Alertas fuera de rango
+Cold --> Inventory : Registrar condición del lote
+
+note "DFD Nivel 2 - Cadena de frío" as N
+@enduml

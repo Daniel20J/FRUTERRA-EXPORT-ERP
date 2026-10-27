@@ -1,0 +1,20 @@
+@startuml
+left to right direction
+actor "Solicitante" as Sol
+actor "Encargado de Compras" as Compras
+actor "Proveedor" as Prov
+rectangle ComprasSystem {
+  (Crear solicitud de compra)
+  (Revisar solicitud)
+  (Solicitar cotizaciones)
+  (Aprobar orden de compra)
+  (Generar orden de compra)
+  (Recepcionar productos)
+}
+Sol --> (Crear solicitud de compra)
+Compras --> (Revisar solicitud)
+Compras --> (Solicitar cotizaciones)
+Compras --> (Aprobar orden de compra)
+Compras --> (Generar orden de compra)
+Prov --> (Recepcionar productos)
+@enduml

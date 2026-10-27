@@ -1,0 +1,12 @@
+@startuml
+!define RECTANGLE class
+RECTANGLE "Inventario" as Inventory
+actor Almacen
+actor Produccion
+
+Almacen --> Inventory : Registrar entrada/salida
+Produccion --> Inventory : Reportar lotes
+Inventory --> Almacen : Consultas de existencia
+
+note "DFD Nivel 1 - Inventario" as N
+@enduml

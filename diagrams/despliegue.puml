@@ -1,0 +1,16 @@
+@startuml
+node "Cliente (Web/PWA)" as cliente
+node "Servidor de Aplicación (EC2)" as app
+node "Base de Datos (RDS - PostgreSQL)" as db
+node "Almacenamiento (S3)" as s3
+node "Servicios externos" as ext
+
+cliente --> app : HTTPS
+app --> db : TCP/Postgres
+app --> s3 : API
+app --> ext : FEL / AgenteAduanal
+
+cloud "Vercel" as vercel
+cliente --> vercel : CDN / Frontend (opcional)
+
+@enduml

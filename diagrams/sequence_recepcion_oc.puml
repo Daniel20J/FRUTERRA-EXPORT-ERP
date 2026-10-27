@@ -1,0 +1,13 @@
+@startuml
+actor EncargadoCompras
+participant Frontend
+participant API
+participant Inventario
+
+EncargadoCompras -> Frontend: Crear O.C. (productos, cantidades, proveedor)
+Frontend -> API: POST /ordenes-compra
+API -> Inventario: Reservar provisión (opcional)
+API --> Frontend: O.C. creada (id)
+API -> "Proveedor (externo)": Enviar O.C.
+note right: Proveedor confirma entrega; luego se registra la recepción
+@enduml

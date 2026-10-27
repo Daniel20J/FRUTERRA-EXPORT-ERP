@@ -1,0 +1,14 @@
+@startuml
+component Frontend
+component API
+component "Base de Datos (PostgreSQL)" as DB
+component S3
+component FEL
+component "Agente Aduanal" as Aduana
+
+Frontend -> API: requests (REST)
+API -> DB: read/write
+API -> S3: store documents
+API -> FEL: enviar factura
+API -> Aduana: enviar datos para exportación
+@enduml

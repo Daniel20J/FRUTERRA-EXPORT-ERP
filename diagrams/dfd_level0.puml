@@ -1,0 +1,15 @@
+@startuml
+!define RECTANGLE class
+RECTANGLE "FRUTERRA ERP" as System
+actor Cliente
+actor Proveedor
+actor Gerente
+actor SAT
+
+Cliente --> System : Solicita cotizaciones/pedidos
+Proveedor --> System : recibe O.C.
+Gerente --> System : consulta reportes
+System --> SAT : Facturación FEL
+
+note "DFD Nivel 0 - Diagrama de contexto" as N
+@enduml

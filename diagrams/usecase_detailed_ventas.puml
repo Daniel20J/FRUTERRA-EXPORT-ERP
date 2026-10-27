@@ -1,0 +1,19 @@
+@startuml
+left to right direction
+actor Vendedor
+actor Cliente
+actor Almacen
+rectangle Ventas {
+  (Crear cotización)
+  (Aprobar cotización)
+  (Registrar pedido)
+  (Confirmar pedido)
+  (Preparar despacho)
+  (Facturar)
+}
+Vendedor --> (Crear cotización)
+Cliente --> (Aprobar cotización)
+Vendedor --> (Registrar pedido)
+Almacen --> (Preparar despacho)
+Vendedor --> (Facturar)
+@enduml
