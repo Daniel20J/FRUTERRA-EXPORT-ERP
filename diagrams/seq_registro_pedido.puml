@@ -1,0 +1,19 @@
+@startuml
+actor Vendedor
+participant "Frontend" as FE
+participant "API" as API
+participant "Inventario" as INV
+participant "Notificador" as NOT
+
+Vendedor -> FE: Crear pedido (datos)
+FE -> API: POST /pedidos
+API -> INV: Verificar disponibilidad
+alt stock disponible
+  INV --> API: Ok
+  API -> FE: Pedido registrado (id)
+  API -> NOT: Enviar notificación a Bodega
+  NOT --> FE: Notificación enviada
+else stock insuficiente
+  API -> FE: Error - stock insuficiente
+end
+@enduml

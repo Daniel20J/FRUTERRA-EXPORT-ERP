@@ -1,0 +1,21 @@
+@startuml
+left to right direction
+actor Gerente
+actor Vendedor
+actor "Encargado de Almacén" as Almacen
+actor "Encargado de Exportaciones" as Export
+rectangle FRUTERRA {
+  (Gestionar Clientes)
+  (Gestionar Productos)
+  (Gestionar Lotes)
+  (Gestionar Pedidos)
+  (Generar Documentos de Exportación)
+  (Monitoreo de Temperatura)
+  (Reportes e Indicadores)
+}
+Gerente --> (Reportes e Indicadores)
+Vendedor --> (Gestionar Clientes)
+Vendedor --> (Gestionar Pedidos)
+Almacen --> (Gestionar Lotes)
+Export --> (Generar Documentos de Exportación)
+@enduml

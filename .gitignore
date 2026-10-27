@@ -1,0 +1,9 @@
+/FRUTERRA-EXPORT-ERP/
+/prototype/node_modules/
+/node_modules/
+*.log
+*.tgz
+/.vscode/
+/.idea/
+*.env
+package-lock.json

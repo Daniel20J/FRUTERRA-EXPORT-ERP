@@ -1,0 +1,30 @@
+@startuml
+package "Dominio" {
+  class Cliente {
+    +id: string
+    +nombre: string
+    +nit: string
+    +direccion: string
+  }
+  class Producto {
+    +id: string
+    +nombre: string
+    +categoria: string
+  }
+  class Lote {
+    +id: string
+    +productoId: string
+    +finca: string
+    +fechaCosecha: Date
+  }
+  class Pedido {
+    +id: string
+    +clienteId: string
+    +fecha: Date
+    +estado: string
+  }
+  Cliente "1" -- "0..*" Pedido
+  Producto "1" -- "0..*" Lote
+  Pedido "1" -- "0..*" Lote : contiene >
+}
+@enduml
